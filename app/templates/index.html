@@ -42,7 +42,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="#index.html">
+          <a class="navbar-brand" href="">
             <img src={{ url_for('static', filename='/images/logo.png') }} />
             <span>
               Recyclegence
@@ -100,20 +100,16 @@
               <div class="d-flex  flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
                   <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="about.html">About </a>
+                    <a class="nav-link" href="{{ url_for('about') }}">About </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="service.html">Application </a>
+                    <a class="nav-link" href="{{ url_for('aplikasi') }}">Application </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Our Team</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                  </li>
+                    <a class="nav-link" href="{{ url_for('team') }}">Our Team</a>
                 </ul>
                 
               </div>
@@ -144,10 +140,10 @@
                         MELALUI PEMILAHAN & MENGKLASIFIKASIKAN SAMPAH CERDAS.
                       </p>
                       <div class="btn-box">
-                        <a href="about.html" class="btn-1">
+                        <a href="{{ url_for('about') }}" class="btn-1">
                           Lebih lanjut..
                         </a>
-                        <a href="" class="btn-2">
+                        <a href="{{ url_for('aplikasi') }}" class="btn-2">
                           Yuk Mulai!
                         </a>
                       </div>
@@ -172,10 +168,10 @@
                         Recyclegence menekankan pada inovasi, efisiensi, dan efektivitas dalam proses pemilahan & mengklasifikasikan sampah untuk dapat didaur ulang guna mencapai dunia yang lebih berkelanjutan.
                       </p>
                       <div class="btn-box">
-                        <a href="" class="btn-1">
+                        <a href="{{ url_for('about') }}" class="btn-1">
                           Lebih Lanjut..
                         </a>
-                        <a href="" class="btn-2">
+                        <a href="{{ url_for('aplikasi') }}" class="btn-2">
                           Yuk Mulai!
                         </a>
                       </div>
@@ -199,10 +195,10 @@
                         Dengan memanfaatkan teknologi cerdas, Recyclegence berupaya untuk mentransformasi cara kita melihat dan melaksanakan daur ulang. Filosofi ini menekankan pada inovasi, efisiensi, dan efektivitas dalam proses daur ulang untuk mencapai dunia yang lebih berkelanjutan.
                       </p>
                       <div class="btn-box">
-                        <a href="" class="btn-1">
+                        <a href="{{ url_for('about') }}" class="btn-1">
                           Lebih Lanjut..
                         </a>
-                        <a href="" class="btn-2">
+                        <a href="{{ url_for('aplikasi') }}" class="btn-2">
                           Yuk Mulai!
                         </a>
                       </div>
@@ -221,7 +217,7 @@
 
   <!-- about section -->
 
-  <section class="about_section layout_padding">
+  <section id='about' class="about_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -247,7 +243,7 @@
   </section>
   <!-- end about section -->
 
-<!-- Us section -->
+<!-- program section -->
 
 <section class="us_section layout_padding">
   <div class="container">
@@ -376,7 +372,7 @@
 
 
 
-  <!-- client section -->
+  <!-- tutorial section -->
 
   <section class="client_section layout_padding">
     <div class="container">
@@ -443,9 +439,9 @@
     </div>
   </section>
 
-  <!-- end client section -->
+  <!-- end tutorial section -->
 
-  <!-- result section -->
+  <!-- app section -->
 
   <section class="result_section">
     <div class="container-fluid">
@@ -458,16 +454,14 @@
         <div class="col-lg-4 col-md-5">
           <div class="detail-box">
             <h2>
-              BUILT TO BRING <br>
-              BEST RESULTS
+              RECYCLEGENCE
             </h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              Dengan satu langkah kecil, Anda dapat berkontribusi pada upaya daur ulang dan membantu menjaga lingkungan kita tetap bersih. 
+              Ayo, coba sekarang dan jadilah agen perubahan dalam perjuangan untuk keberlanjutan!
             </p>
             <a href="">
-              Prediksi!
+              Mulai!
             </a>
           </div>
         </div>
@@ -475,7 +469,7 @@
     </div>
   </section>
 
-  <!-- end result section -->
+  <!-- end app section -->
 
 
   <!-- info section -->
@@ -498,16 +492,16 @@
           </h6>
           <ul>
             <li class=" active">
-              <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="">
-              <a class="" href="about.html">About </a>
+              <a class="" href="{{ url_for('about') }}">About </a>
             </li>
             <li class="">
-              <a class="" href="service.html">Application </a>
+              <a class="" href="{{ url_for('aplikasi') }}">Application </a>
             </li>
             <li class="">
-              <a class="" href="#contactSection">Our Team</a>
+              <a class="" href="{{ url_for('team') }}">Our Team</a>
           </ul>
         </div>
         
