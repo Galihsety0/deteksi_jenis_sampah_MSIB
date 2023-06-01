@@ -34,9 +34,12 @@
   <!-- JavaScript -->
   <link href="/static/js/bootstrap.js" rel="stylesheet" />
   <link href="/static/js/jquery-3.4.1.min.js" rel="stylesheet" />
+
+  <!-- Icon -->
+  <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
 </head>
 
-<body class="sub_page aplikasi_page">
+<body class="sub_page about_page">
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
@@ -83,7 +86,6 @@
           </div>
         </nav>
       </div>
-
     </header>
     <!-- end header section -->
     <!-- slider section -->
@@ -105,10 +107,10 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('about') }}">About </a>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('aplikasi') }}">Application </a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for('team') }}">Our Team</a>
                 </ul>
                 
@@ -118,20 +120,27 @@
         </div>
       </div>
     </section>
-    <!-- end slider section -->
   </div>
 
-  <!-- team section -->
-  <div class="container">
-    <div class="row">
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Tim Pengembang
+        </h2>
+      </div>
+      <div class="row">
         <div class="col-md-3 col-sm-6">
             <div class="our-team">
-                <img src="images/img-1.jpg" alt="">
+                <img src="/static/images/galih.png" alt="">
                 <div class="team-content">
-                    <h3 class="post-title">Williamson</h3>
-                    <span class="post">Web Desginer</span>
+                    <h3 class="post-title">GALIH SETYO PERMATA</h3>
+                    <span class="post">Frontend & Backend <br> AI Enginer</span>
                     <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio exercitationem facilis laborum perferendis quasi, ratione.
+                        Mahasiswa Universitas Negeri Surabaya
                     </p>
                     <ul class="team_social">
                         <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
@@ -141,13 +150,107 @@
                     </ul>
                 </div>
                 <div class="team-prof">
-                    <h3 class="post-title">Williamson</h3>
-                    <span class="post">Web Desginer</span>
+                    <h3 class="post-title">GALIH SETYO PERMATA</h3>
+                    <span class="post">Frontend & Backend <br> AI Engineer</span>
                 </div>
             </div>
         </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <img src="/static/images/steven.png" alt="">
+                <div class="team-content">
+                    <h3 class="post-title">STEVEN RICARDO UPA</h3>
+                    <span class="post">Fullstack Developer</span>
+                    <p class="description">
+                        Mahasiswa Universitas Sam Ratulangi
+                    </p>
+                    <ul class="team_social">
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+                <div class="team-prof">
+                    <h3 class="post-title">STEVEN RICARDO UPA</h3>
+                    <span class="post">Full Stack Developer</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <img src="/static/images/adel.png" alt="">
+                <div class="team-content">
+                    <h3 class="post-title">Adel Yahzunka</h3>
+                    <span class="post">Ketua Tim</span>
+                    <p class="description">
+                        Mahasiswa Politeknik Jember
+                    </p>
+                    <ul class="team_social">
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+                <div class="team-prof">
+                    <h3 class="post-title">Adel Yahzunka</h3>
+                    <span class="post">Ketua Tim</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="our-team">
+                <img src="/static/images/gorgina.png" alt="">
+                <div class="team-content">
+                    <h3 class="post-title">Georgina Romauli Pingkan Siagian</h3>
+                    <span class="post">AI Engineer</span>
+                    <p class="description">
+                        Mahasiswa Universitas Sam Ratulangi
+                    </p>
+                    <ul class="team_social">
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+                <div class="team-prof">
+                    <h3 class="post-title">Georgina Romauli Pingkan Siagian</h3>
+                    <span class="post">AI Engineer</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="our-team">
+              <img src="/static/images/ayano.png" alt="">
+              <div class="team-content">
+                  <h3 class="post-title">Ayano Elisabeth Rumeen</h3>
+                  <span class="post">AI Engineer</span>
+                  <p class="description">
+                      Mahasiswa Universitas Sam Ratulangi
+                  </p>
+                  <ul class="team_social">
+                      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                      <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                  </ul>
+              </div>
+              <div class="team-prof">
+                  <h3 class="post-title">Ayano Elisabeth Rumeen</h3>
+                  <span class="post">AI Engineer</span>
+              </div>
+          </div>
+      </div>
     </div>
-  </div>
+    </div>
+  </section>
+  <!-- end tim section -->
 
 
   <!-- info section -->
@@ -175,10 +278,10 @@
             <li class="">
               <a class="" href="{{ url_for('about') }}">About </a>
             </li>
-            <li class="active">
+            <li class="">
               <a class="" href="{{ url_for('aplikasi') }}">Application </a>
             </li>
-            <li class="">
+            <li class="active">
               <a class="" href="{{ url_for('team') }}">Our Team</a>
           </ul>
         </div>

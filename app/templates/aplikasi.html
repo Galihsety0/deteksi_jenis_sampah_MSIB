@@ -34,6 +34,9 @@
   <!-- JavaScript -->
   <link href="/static/js/bootstrap.js" rel="stylesheet" />
   <link href="/static/js/jquery-3.4.1.min.js" rel="stylesheet" />
+  
+  <!-- Icon -->
+  <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
 </head>
 
 <body class="sub_page aplikasi_page">
@@ -111,7 +114,6 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('team') }}">Our Team</a>
                 </ul>
-                
               </div>
             </div>
           </nav>
@@ -144,10 +146,10 @@
               </div>
               <div class="detail-box">
                 <h5>
-                  Upload Gambar/Real Time
+                  Pilih Fitur
                 </h5>
                 <p>
-                  Upload gambar yang ingin dideteksi lalu kirim gambar atau dapat menggunakan real time kamera.
+                  Gunakan salah satu fitur, kamu dapat menggungah gambar yang ingin dideteksi lalu kirim gambar atau dapat menggunakan kamera secara real time.
                 </p>
               </div>
             </div>
@@ -191,111 +193,95 @@
   <!-- end tutorial section -->
 
   <!-- app section -->
-
+  <!-- unggah gambar section -->
   <section class="result_section">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6 px-0">
-          <div class="img-box">
-            <img src="/static/images/app.png" alt="">
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-5">
-          <div class="detail-box">
-            <h2>
-              RECYCLEGENCE
-            </h2>
-            <p>
-              Dengan satu langkah kecil, Anda dapat berkontribusi pada upaya daur ulang dan membantu menjaga lingkungan kita tetap bersih. 
-              Ayo, coba sekarang dan jadilah agen perubahan dalam perjuangan untuk keberlanjutan!
-            </p>
-            <a href="">
-              Mulai!
-            </a>
-          </div>
+    <div class="work-area-2 section-padding">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            <br> FITUR
+          </h2>
         </div>
       </div>
     </div>
+    <!-- Unggah gambar section -->
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 custom-grid">
+        <div class="work-wrap">
+          <div class="work-content" id="sideaupload">
+            <h2>Unggah Gambar</h2>
+            <p>
+              Unggah gambar sampah kamu untuk mengidentifikasi jenis sampahmu.
+              <br>
+              <br>
+            </p>
+            <a href="#" data-toggle="modal" data-target="#modalUpload">Mulai Sekarang</a>
+          </div>
+        </div>
+    </div>
+    
+    <!-- deteksi realtime section -->
+    <div class="col-lg-6 col-md-6 col-sm-6 custom-grid">
+      <div class="work-wrap">
+        <div class="work-content" id="sideadetect">
+          <h2>Deteksi Secara Realtime</h2>
+          <p>
+            Dengan menggunakan webcam/kamera eksternal, kamu dapat dengan langsung melakukan identifikasi jenis sampah kamu.
+          </p>
+          <a href="#" data-toggle="modal" data-target="#modalDeteksi">Mulai Sekarang</a>
+        </div>
+      </div>
+    </div>
+    
+        <!-- form Unggah gambar section -->
+        <div class="modal fade bd-example-modal-lg" id="modalUpload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Form Unggah Gambar Prediksi
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="modal-body">
+                      <!-- Input atau Unggah Gambar dari Pengguna -->
+                      <form>
+                        <h3 style="padding-bottom: 20px;">
+                          Silahkan input Gambar
+                        </h3>
+                        <img src="/static/images/s-2.jpg" width="300"  style="padding-bottom: 20px;" ></img>
+                            <input type="file" id="input_gambar" name="file">
+                        <p></p>    
+                        <br>
+                        <!-- Tombol Prediksi -->
+                        <button type="submit" id="prediksi_submit" class="btn btn-default btn-lg">Prediksi</button>
+                      </form>
+                    </div>
+                    <div class="col-sm-6">
+                      <br>
+                      <!-- Bagian Halaman untuk Hasil Prediksi -->
+                      <div id="hasil_prediksi" style="padding-top: 0px;">
+                        <!-- Hasil Prediksi akan ditampilkan di sini-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    <!-- END unggah gambar section -->
+
+    
   </section>
 
   <!-- end app section -->
-
-
-  <!-- info section -->
-
-  <section class="info_section layout_padding2-top">
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <h6>
-            About Recyclegence
-          </h6>
-          <p>
-            Recyclegence mencerminkan konsep atau gagasan tentang menggabungkan kecerdasan buatan praktik daur ulang (klasifikasi jenis sampah untuk dapat didaur). 
-          </p>
-        </div>
-        <div class="col-md-2 offset-md-1"> 
-          <h6>
-            Menu
-          </h6>
-          <ul>
-            <li class="">
-              <a class="" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="">
-              <a class="" href="{{ url_for('about') }}">About </a>
-            </li>
-            <li class="active">
-              <a class="" href="{{ url_for('aplikasi') }}">Application </a>
-            </li>
-            <li class="">
-              <a class="" href="{{ url_for('team') }}">Our Team</a>
-          </ul>
-        </div>
-        
-        <div class="col-md-3">
-          <h6>
-            Contact Us
-          </h6>
-          <div class="info_link-box">
-            <a href="">
-              <img src="/static/images/call-white.png" alt="">
-              <span>+62 878 8076 2086</span>
-            </a>
-            <a href="">
-              <img src="/static/images/mail-white.png" alt="">
-              <span> recyclegence_jatayu3@gmail.com</span>
-            </a>
-          </div>
-          <div class="info_social">
-            <div>
-              <a href="">
-                <img src="/static/images/facebook-logo-button.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="/static/images/twitter-logo-button.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="/static/images/linkedin.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="/static/images/instagram.png" alt="">
-              </a>
-            </div>
-          </div>
-          <div>
-        </div>
-    </div>
-  </section>
-
-  <!-- end info section -->
+  
 
 
   <!-- footer section -->
