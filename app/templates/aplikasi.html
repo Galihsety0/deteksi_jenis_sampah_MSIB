@@ -249,13 +249,16 @@
                   <div class="col-sm-6">
                     <div class="modal-body">
                       <!-- Input atau Unggah Gambar dari Pengguna -->
-                      <form>
+                      <form method="post" action="" enctype='multipart/form-data'>
                         <h3 style="padding-bottom: 20px;">
                           Silahkan input Gambar
                         </h3>
                         <img src="/static/images/s-2.jpg" width="300"  style="padding-bottom: 20px;" ></img>
-                            <input type="file" id="input_gambar" name="file">
-                        <p></p>    
+                            <input type="file" id="input_gambar" name="file" accept="image/*" onchange="readURL(this);">
+                        <div class="image-preview" id="imagePreview">
+                          <img src="" alt="Image Preview" class="image-preview__image" style="display: none; width: 50%;">
+                          <span class="image-preview__default-text">Image Preview</span>
+                        </div>   
                         <br>
                         <!-- Tombol Prediksi -->
                         <button type="submit" id="prediksi_submit" class="btn btn-default btn-lg">Prediksi</button>
@@ -264,7 +267,7 @@
                     <div class="col-sm-6">
                       <br>
                       <!-- Bagian Halaman untuk Hasil Prediksi -->
-                      <div id="hasil_prediksi" style="padding-top: 0px;">
+                      <div id="hasil_prediksi" align="center", style="padding-top: 2px;">
                         <!-- Hasil Prediksi akan ditampilkan di sini-->
                       </div>
                     </div>
@@ -274,10 +277,13 @@
             </div>
           </div>
         </div>
+        <!-- END unggah gambar section -->
+        
+        <!-- JavaScript untuk Animasi Scroll dan Prediksi Model -->
+      	<script  src={{ url_for('static', filename='/js/client_side.js') }}></script>
       
-    <!-- END unggah gambar section -->
+        
 
-    
   </section>
 
   <!-- end app section -->
