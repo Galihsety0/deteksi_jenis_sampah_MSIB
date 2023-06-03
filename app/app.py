@@ -89,5 +89,8 @@ def apiDeteksi():
         
 
 if __name__ == "__main__":
+    # # Load model yang telah ditraining
+    # model = make_model()
+    # model.load_weights("garbage_classification_model.h5")
     app.run(host="localhost", port=5000, debug=True)
 
