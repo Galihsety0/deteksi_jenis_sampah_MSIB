@@ -1,22 +1,47 @@
 from flask import Flask, render_template, request, send_file, jsonify, redirect, Response
-from flask_ngrok import run_with_ngrok
-
+from werkzeug.utils import secure_filename
+import pandas as pd
+import numpy as np
+import os
+# import tensorflow as tf
+# from tensorflow.keras.models import Sequential
+# from tensorflow.keras.layers import Conv2D, MaxPooling2D, \
+# Flatten, Dense, Activation, Dropout,LeakyReLU
+# from PIL import Image
+# from fungsi import make_model
+# from keras.models import Sequential
+# from keras.layers import Conv2D, MaxPooling2D, Dropout, Flatten, Dense, Activation, BatchNormalization
+# import keras.applications.mobilenet_v2 as mobilenetv2
+# import tensorflow.keras as keras
+# from tensorflow.keras.applications import mobilenet_v2
+# from tensorflow.keras.models import Model
+# from tensorflow.keras.layers import GlobalAveragePooling2D, Dense
 
 
 # ====== FLASK SETUP ======
 
-UPLOAD_FOLDER = 'C:\\Users\\galih\\Downloads\\msibFIX\\test images'
+UPLOAD_FOLDER = 'C:\\Users\\galih\\Downloads\\deteksi_jenis_sampah_MSIB\\test images'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 
-app   = Flask(__name__, static_url_path='/static')
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['SECRET_KEY'] = 'ini secret key KAMI'
+# app   = Flask(__name__, static_url_path='/static')
+# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# app.config['SECRET_KEY'] = 'ini secret key KAMI'
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+# def allowed_file(filename):
+#     return '.' in filename and \
+#            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+app = Flask(__name__, static_url_path='/static')
+
+app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
+app.config['UPLOAD_EXTENSIONS']  = ['.jpg','.JPG']
+app.config['UPLOAD_PATH']        = './static/images/uploads/'
+
+model = None
+
+NUM_CLASSES = 12
+cifar10_classes = ["paper", "cardboard", "plastic", "metal", "trash", "battery", "shoes", "clothes", "green-glass", "brown-glass", "white-glass", "biological"]
 
 # [Routing untuk Halaman Utama atau Home]
 @app.route("/")
@@ -34,12 +59,12 @@ def team():
     return render_template('team.html')
 
 # [Routing untuk Halaman apikasi]
-@app.route("/aplikasi", methods=['GET', 'POST'])
+@app.route("/aplikasi")
 def aplikasi():
     return render_template('aplikasi.html')
 
 
-@app.route("/api/deteksi", methods=['GET', 'POST'])
+@app.route("/api/deteksi", methods=['POST'])
 def apiDeteksi():
     # Set nilai default untuk hasil prediksi dan gambar yang diprediksi
     hasil_prediksi = '(none)'
@@ -89,8 +114,8 @@ def apiDeteksi():
         
 
 if __name__ == "__main__":
-    # # Load model yang telah ditraining
+    # Load model yang telah ditraining
     # model = make_model()
-    # model.load_weights("garbage_classification_model.h5")
+    # model.load_weights("fix_garbage_classification_model.h5")
     app.run(host="localhost", port=5000, debug=True)
 
