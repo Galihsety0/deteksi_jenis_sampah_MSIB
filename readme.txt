@@ -1,3 +1,6 @@
+download model:
+https://drive.google.com/drive/folders/1BqKICu5wE_SUvCrI5TVeYlMJuJ13bh0_?usp=share_link
+kemudian masukan model .h5 ke dalam folder app
 ===================
 [Packages List]
 ===================
